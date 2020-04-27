@@ -7,8 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavigationComponent } from 'src/app/core/navigation/navigation.component';
-
-
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [NavigationComponent],
@@ -19,7 +18,8 @@ import { NavigationComponent } from 'src/app/core/navigation/navigation.componen
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule
   ],
   exports: [NavigationComponent]
 })
