@@ -1,43 +1,27 @@
-# Frontend test (DE)
- 
-## Zielsetzung
-Zur Wahl stehen folgende APIs:
-- https://swapi.dev/
-- http://ergast.com/mrd/
+# AssecorTest
 
-Ziel ist es, eine Webanwendung zu erstellen, welche die Daten der Schnittstellen visualisiert. Im Fall der SWAPI könnte man mit einer Liste der Filme beginnen, und sich über auftretende Charaktere weiter vertiefen. Es ist nicht erforderlich, alle Ressourcen der Schnittstelle zu verwerten, aber es sollte zumindest zu einer Master-Detail Beziehung kommen, mit welcher von einer Ressource, auf die Detailansicht einer anderen referenziert wird.
-Bitte richte dich bei der Umsetzung nach den Mockups unter folgendem Link:
-https://xd.adobe.com/view/b3c98134-11a8-44c2-5dd2-477b8550307f-c5f8/screen/c8fb4386-9d0d-4913-87e0-703d19d75589/Charaktere .
-Bei den Eingabemasken für neue Elemente geht es nur um die UI Umsetzung, da die Schnittstelle keine derartige Funktionalität anbietet.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
-## Akzeptanzkriterien
-- Die Webanwendung zeigt Ressourcen der gewählten API an
-- Es werden mindestens 3 Root-Ressourcen angesprochen und visualisiert
-- Es wurde ein Anwendungs-Framework verwendet (Angular 2+, Blazor, Vue)
-- Die Anwendung ist responsive und skaliert auf Bildschirmgrößen entsprechend
-- Die Anwendung liegt unter Source-control (Git, TFS, DevOps)
+## Development server
 
-## Abgabeform
-- Link zu einem Repository welches die Anwendung und ein README beinhaltet (Github, Gitlab, Devops)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-# Frontend test (EN)
+## Code scaffolding
 
-## main goal
-Choosing one of the following APIs:
-- https://swapi.dev/
-- http://ergast.com/mrd/
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-your job is to create a simple web application, which visualizes the API data. In case of SWAPI, one way might be to start with a list of movies, and then navigate your way down via characters or other entities. You do not have to use all the resources the API is offering you, but there should be atleast one or two layers of master-detail relationship.
-Please follow the mockups under the following link:
-https://xd.adobe.com/view/b3c98134-11a8-44c2-5dd2-477b8550307f-c5f8/screen/c8fb4386-9d0d-4913-87e0-703d19d75589/Charaktere .
-The input masks for new elements are only about the UI implementation, since the interface does not offer such functionality.
+## Build
 
-## acceptance criteria
-- the application runs and shows data of the selected API
-- there are atleast 3 consumed API root resources
-- you have used an application framework (Angular 2+, Blazor, Vue)
-- the application uses responsive design and scales properly woth changing screen sizes/resolutions
-- the code is under source control (Git, TFS, DevOps)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## hand-in
-- Send us a link to your repository containing your code and a README
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
