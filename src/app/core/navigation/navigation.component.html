@@ -4,8 +4,9 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       (click)="drawer.close()"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Star Wars</mat-toolbar>
     <mat-nav-list>
+      <a mat-list-item [routerLink]="'/home'" [routerLinkActive]="'active'">Home</a>
       <a mat-list-item [routerLink]="'/films'" [routerLinkActive]="'active'">Films</a>
       <a mat-list-item [routerLink]="'/characters'" [routerLinkActive]="'active'">Characters</a>
       <a mat-list-item [routerLink]="'/planets'" [routerLinkActive]="'active'">Planets</a>
@@ -21,7 +22,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>assecor-test</span>
+      <span>Star Wars</span>
     </mat-toolbar>
     <!-- Add Content Here -->
   </mat-sidenav-content>

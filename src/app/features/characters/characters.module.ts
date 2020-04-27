@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CharactersRoutingModule } from './characters-routing.module';
 import { CharacterComponent } from './character/character.component';
-import { CharactersComponent } from './characters.component';
+import { CharactersComponent } from './characters/characters.component';
 
 
 @NgModule({
