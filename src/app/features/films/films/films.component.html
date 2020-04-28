@@ -1,3 +1,35 @@
-<mat-card>
-  {{(films$ | async) | json}}
-</mat-card>
+<h1>Films</h1>
+<div fxFlex fxLayout="column" fxLayoutGap.lt-sm="1rem" fxLayoutAlign="space-between" fxLayout.gt-xs="row wrap">
+  <mat-card
+    *ngFor="let item of films$ | async"
+    fxLayout="column"
+    fxLayoutAlign = "space-around"
+    fxLayoutGap="1rem"
+  >
+    <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+      <img class="film-image" src="https://i.picsum.photos/id/10/100/50.jpg" />
+    </mat-card-header>
+    <mat-card-title class="pointer" [routerLink]="['/films/', item.episode_id]">{{
+      item.title
+    }}</mat-card-title>
+
+    <mat-card-content>
+      <ul class="card-content-list">
+        <li>
+          <div>Director: {{ item.director }}</div>
+        </li>
+        <li>
+          <div>Producer: {{ item.producer }}</div>
+        </li>
+        <li>
+          <div>Release Date: {{ item.release_date | date }}</div>
+        </li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-actions fxLayoutAlign="end">
+      <button mat-stroked-button color="primary" [routerLink]="['/films/', item.episode_id]">More information...</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

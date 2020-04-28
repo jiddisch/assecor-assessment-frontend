@@ -1,0 +1,22 @@
+@import './../../../variables';
+
+:host {
+  padding: 3%;
+  width: 100%;
+  flex-direction: column;
+}
+
+mat-card-title {
+  padding: 0 16px;
+}
+
+.film-image-wrapper {
+
+  @include respond-to('gt-xs') {
+    width: 50%;
+  }
+
+  .film-image {
+    width: 100%;
+  }
+}
