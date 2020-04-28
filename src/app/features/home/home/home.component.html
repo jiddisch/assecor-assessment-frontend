@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div fxFlex>
+  <button
+    fxFlex
+    fxFlex.gt-xs="33"
+    mat-raised-button
+    color="primary"
+    [routerLink]="[item.link]"
+    *ngFor="let item of navigation"
+  >
+    {{ item.label }}
+  </button>
+</div>

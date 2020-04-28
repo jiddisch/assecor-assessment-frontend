@@ -6,6 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  navigation = [
+    {
+      link: '/films',
+      label: 'Films'
+    },
+    {
+      link: '/characters',
+      label: 'Characters'
+    },
+    {
+      link: '/planets',
+      label: 'Planets'
+    }
+  ];
+
   constructor() {}
 
   ngOnInit() {}

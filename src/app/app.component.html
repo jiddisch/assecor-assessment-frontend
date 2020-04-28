@@ -1,2 +1,57 @@
-<app-navigation></app-navigation>
-<router-outlet><router-outlet>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    fxShow
+    fxHide.gt-xs
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="'push'"
+    (click)="drawer.close()"
+  >
+    <mat-toolbar>Star Wars</mat-toolbar>
+    <mat-nav-list>
+      <a
+        *ngFor="let item of navigation"
+        href="#"
+        mat-list-item
+        [routerLink]="item.link"
+        [routerLinkActive]="'active'"
+      >
+        {{ item.label }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        fxShow
+        fxHide.gt-xs
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span fxFlex [routerLink]="'/home'">Star Wars</span>
+      <span fxHide fxShow.gt-xs>
+        <button
+          mat-button
+          *ngFor="let item of navigation"
+          [routerLink]="[item.link]"
+          routerLinkActive="active"
+        >
+          {{ item.label }}
+        </button>
+      </span>
+
+      <div class="search-wrapper">
+        <input placeholder="Search">
+        <mat-icon color="primary">search</mat-icon>
+      </div>
+
+    </mat-toolbar>
+    <router-outlet #o="outlet"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
