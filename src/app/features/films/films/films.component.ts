@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilmsService } from 'src/app/core/films/films.service';
 
 @Component({
   selector: 'app-films',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./films.component.scss']
 })
 export class FilmsComponent implements OnInit {
+  films$ = this.charactersService.films$();
 
-  constructor() { }
+  constructor(private charactersService: FilmsService) { }
 
   ngOnInit(): void {
   }

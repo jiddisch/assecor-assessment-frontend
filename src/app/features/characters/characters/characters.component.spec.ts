@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharactersComponent } from './characters.component';
+import { MatCardModule } from '@angular/material/card';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CharactersComponent', () => {
   let component: CharactersComponent;
@@ -8,7 +11,8 @@ describe('CharactersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CharactersComponent ]
+      declarations: [ CharactersComponent ],
+      imports: [RouterTestingModule.withRoutes([]), MatCardModule, HttpClientTestingModule]
     })
     .compileComponents();
   }));

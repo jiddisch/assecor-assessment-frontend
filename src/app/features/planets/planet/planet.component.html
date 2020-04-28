@@ -1,1 +1,3 @@
-<mat-card>planet works!</mat-card>
+<mat-card>
+  {{(planet$ | async) | json}}
+</mat-card>

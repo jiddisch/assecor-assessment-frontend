@@ -1,1 +1,3 @@
-<mat-card>characters works!</mat-card>
+<mat-card>
+  {{(characters$ | async) | json}}
+</mat-card>

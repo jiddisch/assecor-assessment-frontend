@@ -6,9 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CharactersService } from './characters/characters.service';
+import { FilmsService } from './films/films.service';
+import { PlanetsService } from './planets/planets.service';
 
 @NgModule({
   imports: [
@@ -21,7 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RouterModule,
     MatInputModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   exports: [
     HttpClientModule,
@@ -31,8 +34,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatListModule,
     MatInputModule,
     MatButtonModule,
-    FlexLayoutModule
-  ]
+    FlexLayoutModule,
+  ],
+  providers: [CharactersService, FilmsService, PlanetsService],
 })
 export class CoreModule {
   constructor(
