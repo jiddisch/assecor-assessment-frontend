@@ -1,0 +1,32 @@
+@import './../../../variables';
+
+:host {
+  padding: 3%;
+  width: 100%;
+  flex-direction: column;
+}
+
+mat-card-title {
+  padding: 0 16px;
+}
+
+.item-image-wrapper {
+
+  @include respond-to('lt-sm') {
+    height: 33vh;
+  }
+
+  .item-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+}
+
+mat-card {
+  padding: 3rem;
+}
+
+mat-card-footer {
+  padding: 0 1rem;
+}

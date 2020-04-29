@@ -1,3 +1,58 @@
-<mat-card>
-  {{(character$ | async) | json}}
+<mat-card
+  fxLayout="column"
+  fxLayout.gt-xs="row"
+  fxLayoutAlign="space-around"
+  fxLayoutGap="16px"
+>
+  <div fxFlex class="item-image-wrapper">
+    <div
+      class="item-image"
+      [style.background-image]="'url(https://i.picsum.photos/id/10/100/50.jpg)'"
+    ></div>
+  </div>
+
+  <div fxFlex *ngIf="character$ | async as character">
+    <mat-card-title>{{ character.name }}</mat-card-title>
+
+    <mat-card-content>
+      <ul class="card-content-list">
+        <li>
+          <div>Hight: {{ character.height }}</div>
+        </li>
+        <li>
+          <div>Mass: {{ character.mass }}</div>
+        </li>
+        <li>
+          <div>Hair_color: {{ character.hair_color }}</div>
+        </li>
+        <li>
+          <div>Eye Color: {{ character.eye_color }}</div>
+        </li>
+        <li>
+          <div>Birth Day: {{ character.birth_day }}</div>
+        </li>
+        <li>
+          <div>Gender: {{ character.gender }}</div>
+        </li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-footer fxLayout="column">
+      <div fxLayout="column">
+        <h3>Films:</h3>
+        <mat-chip-list aria-label="Characters selection">
+          <mat-chip
+            class="pointer"
+            color="primary"
+            selected
+            [routerLink]="['/films', film.id]"
+            *ngFor="let film of character.filmsCategoryNames"
+            ><span class="pointer">{{ film.name }}</span></mat-chip
+          >
+          <mat-chip>...</mat-chip>
+        </mat-chip-list>
+      </div>
+
+    </mat-card-footer>
+  </div>
 </mat-card>

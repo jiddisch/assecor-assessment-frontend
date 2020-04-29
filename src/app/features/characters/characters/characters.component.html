@@ -1,3 +1,43 @@
-<mat-card>
-  {{(characters$ | async) | json}}
-</mat-card>
+<h1>Characters</h1>
+<div fxFlex fxLayout="column" fxLayoutGap.lt-sm="1rem" fxLayoutAlign="space-between" fxLayout.gt-xs="row wrap">
+
+  <mat-card
+    *ngFor="let item of characters$ | async; let i = index"
+    fxLayout="column"
+    fxLayoutAlign = "space-around"
+    fxLayoutGap="1rem"
+  >
+    <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+      <img class="pointer item-image" [routerLink]="['/characters/', i + 1]" src="https://i.picsum.photos/id/10/100/50.jpg" />
+    </mat-card-header>
+    <mat-card-title class="pointer" [routerLink]="['/characters/', i + 1]" *ngIf="item">{{ item.name }}</mat-card-title>
+
+    <mat-card-content *ngIf="item">
+      <ul class="card-content-list">
+        <li>
+          <div>Hight: {{ item.height }}</div>
+        </li>
+        <li>
+          <div>Mass: {{ item.mass }}</div>
+        </li>
+        <li>
+          <div>Hair_color: {{ item.hair_color }}</div>
+        </li>
+        <li>
+          <div>Eye Color: {{ item.eye_color }}</div>
+        </li>
+        <li>
+          <div>Birth Day: {{ item.birth_day }}</div>
+        </li>
+        <li>
+          <div>Gender: {{ item.gender }}</div>
+        </li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-actions fxLayoutAlign="end">
+      <button mat-stroked-button color="primary" [routerLink]="['/characters/', i + 1]">More information...</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

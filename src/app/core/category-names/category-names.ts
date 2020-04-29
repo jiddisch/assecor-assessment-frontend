@@ -14,7 +14,7 @@ export class CategoryNamesService {
     return this.http.get<any>(url).pipe(
       map((res) => {
         const id = url.split('/').filter(Boolean).pop();
-        return { name: res.name, id, type };
+        return { name: res.name || res.title, id, type };
       })
     );
   }

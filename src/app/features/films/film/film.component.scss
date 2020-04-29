@@ -10,13 +10,13 @@ mat-card-title {
   padding: 0 16px;
 }
 
-.film-image-wrapper {
+.item-image-wrapper {
 
   @include respond-to('lt-sm') {
     height: 33vh;
   }
 
-  .film-image {
+  .item-image {
     width: 100%;
     height: 100%;
     background-size: cover;

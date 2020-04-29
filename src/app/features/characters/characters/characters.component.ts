@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from 'src/app/core/characters/characters.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-characters',
@@ -7,7 +8,12 @@ import { CharactersService } from 'src/app/core/characters/characters.service';
   styleUrls: ['./characters.component.scss']
 })
 export class CharactersComponent implements OnInit {
-  characters$ = this.charactersService.characters$();
+  characters$ = this.charactersService.characters$().pipe(
+    tap(res => {
+      console.log(res);
+
+    })
+  );
 
   constructor(private charactersService: CharactersService) { }
 

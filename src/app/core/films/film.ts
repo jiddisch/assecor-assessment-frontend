@@ -1,16 +1,13 @@
+import { CategoryName } from '../category-names/category-name';
+
 export interface Film {
   title: string;
   characters: string[];
-  charactersCategoryNames?: CategoryName[];
   planets: string[];
+  charactersCategoryNames?: CategoryName[];
   planetsCategoryNames?: CategoryName[];
   director: string;
   producer: string;
   release_date: string;
 }
 
-export interface CategoryName {
-  id: string;
-  name: string;
-  type: string;
-}

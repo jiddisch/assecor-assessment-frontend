@@ -1,3 +1,30 @@
-<mat-card>
-  {{(planets$ | async) | json}}
-</mat-card>
+<h1>Planets</h1>
+<div fxFlex fxLayout="column" fxLayoutGap.lt-sm="1rem" fxLayoutAlign="space-between" fxLayout.gt-xs="row wrap">
+  <mat-card
+    *ngFor="let item of planets$ | async; let i = index"
+    fxLayout="column"
+    fxLayoutAlign = "space-around"
+    fxLayoutGap="1rem"
+  >
+    <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+      <img class="pointer item-image" [routerLink]="['/planets/', i + 1]" src="https://i.picsum.photos/id/10/100/50.jpg" />
+    </mat-card-header>
+    <mat-card-title class="pointer" [routerLink]="['/planets/', i + 1]" *ngIf="item">{{ item.name }}</mat-card-title>
+
+    <mat-card-content *ngIf="item">
+      <ul class="card-content-list">
+        <li>
+          <div>Gravity: {{ item.gravity }}</div>
+        </li>
+        <li>
+          <div>Population: {{ item.population }}</div>
+        </li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-actions fxLayoutAlign="end">
+      <button mat-stroked-button color="primary" [routerLink]="['/planets/', i + 1]">More information...</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

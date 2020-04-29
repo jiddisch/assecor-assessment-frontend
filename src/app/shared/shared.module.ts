@@ -12,7 +12,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatCardModule,
     MatListModule,
     MatButtonModule,
-    MatChipsModule,
+    MatChipsModule
   ],
   exports: [MatCardModule, MatListModule, MatButtonModule, MatChipsModule],
 })

@@ -4,9 +4,9 @@
   fxLayoutAlign="space-around"
   fxLayoutGap="16px"
 >
-  <div fxFlex class="film-image-wrapper">
+  <div fxFlex class="item-image-wrapper">
     <div
-      class="film-image"
+      class="item-image"
       [style.background-image]="'url(https://i.picsum.photos/id/10/100/50.jpg)'"
     ></div>
   </div>
@@ -33,11 +33,12 @@
         <h3>Characters:</h3>
         <mat-chip-list aria-label="Characters selection">
           <mat-chip
+            class="pointer"
             color="primary"
             selected
             [routerLink]="['/characters', character.id]"
             *ngFor="let character of film.charactersCategoryNames"
-            >{{ character.name }}</mat-chip
+            ><span class="pointer">{{ character.name }}</span></mat-chip
           >
           <mat-chip>...</mat-chip>
         </mat-chip-list>
@@ -51,7 +52,9 @@
             selected
             [routerLink]="['/planets', planet.id]"
             *ngFor="let planet of film.planetsCategoryNames"
-            >{{ planet.name }}</mat-chip
+            ><span class="pointer">
+              {{ planet.name }}
+            </span></mat-chip
           >
           <mat-chip>...</mat-chip>
         </mat-chip-list>

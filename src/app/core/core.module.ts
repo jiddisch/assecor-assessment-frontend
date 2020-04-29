@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CharactersService } from './characters/characters.service';
 import { FilmsService } from './films/films.service';
 import { PlanetsService } from './planets/planets.service';
+import { CategoryNamesService } from './category-names/category-names';
 
 @NgModule({
   imports: [
@@ -36,7 +37,7 @@ import { PlanetsService } from './planets/planets.service';
     MatButtonModule,
     FlexLayoutModule,
   ],
-  providers: [CharactersService, FilmsService, PlanetsService],
+  providers: [CharactersService, FilmsService, PlanetsService, CategoryNamesService],
 })
 export class CoreModule {
   constructor(

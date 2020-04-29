@@ -1,3 +1,46 @@
-<mat-card>
-  {{(planet$ | async) | json}}
+<mat-card
+  fxLayout="column"
+  fxLayout.gt-xs="row"
+  fxLayoutAlign="space-around"
+  fxLayoutGap="16px"
+>
+  <div fxFlex class="item-image-wrapper">
+    <div
+      class="item-image"
+      [style.background-image]="'url(https://i.picsum.photos/id/10/100/50.jpg)'"
+    ></div>
+  </div>
+
+  <div fxFlex *ngIf="planet$ | async as planet">
+    <mat-card-title>{{ planet.name }}</mat-card-title>
+
+    <mat-card-content>
+      <ul class="card-content-list">
+        <li>
+          <div>Gravity: {{ planet.gravity }}</div>
+        </li>
+        <li>
+          <div>Population: {{ planet.population }}</div>
+        </li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-footer fxLayout="column">
+      <div fxLayout="column">
+        <h3>Films:</h3>
+        <mat-chip-list aria-label="Planets selection">
+          <mat-chip
+            color="accent"
+            selected
+            [routerLink]="['/films', film.id]"
+            *ngFor="let film of planet.filmsCategoryNames"
+            ><span class="pointer">
+              {{ film.name }}
+            </span></mat-chip
+          >
+          <mat-chip>...</mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-card-footer>
+  </div>
 </mat-card>

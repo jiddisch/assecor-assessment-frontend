@@ -31,7 +31,6 @@ export class FilmsService {
 
         return forkJoin([...characters, ...planets]).pipe(
           map((res1) => {
-            console.log(res1);
 
             return {
               ...res,

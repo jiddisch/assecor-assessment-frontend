@@ -5,6 +5,8 @@ import { CharactersRoutingModule } from './characters-routing.module';
 import { CharacterComponent } from './character/character.component';
 import { CharactersComponent } from './characters/characters.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    CharactersRoutingModule
+    CharactersRoutingModule,
+    MatCardModule,
+    FlexLayoutModule
   ]
 })
 export class CharactersModule { }
