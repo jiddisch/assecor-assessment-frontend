@@ -7,9 +7,9 @@ import { FilmsService } from 'src/app/core/films/films.service';
   styleUrls: ['./films.component.scss']
 })
 export class FilmsComponent implements OnInit {
-  films$ = this.charactersService.films$();
+  films$ = this.filmsService.films$();
 
-  constructor(private charactersService: FilmsService) { }
+  constructor(private filmsService: FilmsService) { }
 
   ngOnInit(): void {
   }

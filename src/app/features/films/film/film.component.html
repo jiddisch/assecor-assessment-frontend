@@ -1,25 +1,61 @@
-<mat-card fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="space-around">
-  <div class="film-image-wrapper">
-    <img class="film-image" src="https://i.picsum.photos/id/10/100/50.jpg" />
+<mat-card
+  fxLayout="column"
+  fxLayout.gt-xs="row"
+  fxLayoutAlign="space-around"
+  fxLayoutGap="16px"
+>
+  <div fxFlex class="film-image-wrapper">
+    <div
+      class="film-image"
+      [style.background-image]="'url(https://i.picsum.photos/id/10/100/50.jpg)'"
+    ></div>
   </div>
 
-  <div>
-    <mat-card-title class="pointer">{{
-      (film$ | async)?.title
-    }}</mat-card-title>
+  <div fxFlex *ngIf="film$ | async as film">
+    <mat-card-title>{{ film.title }}</mat-card-title>
 
     <mat-card-content>
       <ul class="card-content-list">
         <li>
-          <div>Director: {{ (film$ | async)?.director }}</div>
+          <div>Director: {{ film.director }}</div>
         </li>
         <li>
-          <div>Producer: {{ (film$ | async)?.producer }}</div>
+          <div>Producer: {{ film.producer }}</div>
         </li>
         <li>
-          <div>Release Date: {{ (film$ | async)?.release_date | date }}</div>
+          <div>Release Date: {{ film.release_date | date }}</div>
         </li>
       </ul>
     </mat-card-content>
+
+    <mat-card-footer fxLayout="column">
+      <div fxLayout="column">
+        <h3>Characters:</h3>
+        <mat-chip-list aria-label="Characters selection">
+          <mat-chip
+            color="primary"
+            selected
+            [routerLink]="['/characters', character.id]"
+            *ngFor="let character of film.charactersCategoryNames"
+            >{{ character.name }}</mat-chip
+          >
+          <mat-chip>...</mat-chip>
+        </mat-chip-list>
+      </div>
+
+      <div fxLayout="column">
+        <h3>Planets:</h3>
+        <mat-chip-list aria-label="Planets selection">
+          <mat-chip
+            color="accent"
+            selected
+            [routerLink]="['/planets', planet.id]"
+            *ngFor="let planet of film.planetsCategoryNames"
+            >{{ planet.name }}</mat-chip
+          >
+          <mat-chip>...</mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-card-footer>
   </div>
 </mat-card>
