@@ -5,6 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -14,7 +15,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     MatButtonModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     MatButtonModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
 })
 export class SharedModule {}

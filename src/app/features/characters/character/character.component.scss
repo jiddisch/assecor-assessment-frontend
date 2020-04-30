@@ -6,6 +6,10 @@
   flex-direction: column;
 }
 
+mat-card {
+  min-height: 42vh;
+}
+
 mat-card-title {
   padding: 0 16px;
 }

@@ -15,7 +15,8 @@ import { PlanetsService } from './planets/planets.service';
 import { CategoryNamesService } from './category-names/category-names';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { LoaderService } from './loader/loader.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -44,9 +46,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
-  providers: [CharactersService, FilmsService, PlanetsService, CategoryNamesService],
+  providers: [CharactersService, FilmsService, PlanetsService, CategoryNamesService, LoaderService],
 })
 export class CoreModule {
   constructor(

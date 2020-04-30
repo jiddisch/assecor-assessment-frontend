@@ -22,8 +22,6 @@ export class CharactersService {
   character$(id: string): Observable<Character> {
     return this.http.get<any>(`${environment.baseUrl}people/${id}`).pipe(
       switchMap((res: Character) => {
-        console.log(res);
-
         const films = res.films.map((val) =>
           this.categoryNamesService.getCategoryNames$(val, 'films')
         );
