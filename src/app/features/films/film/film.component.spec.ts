@@ -3,6 +3,7 @@ import { FilmComponent } from './film.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('FilmComponent', () => {
   let component: FilmComponent;
@@ -11,7 +12,7 @@ describe('FilmComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FilmComponent ],
-      imports: [RouterTestingModule.withRoutes([]), MatCardModule, HttpClientTestingModule]
+      imports: [RouterTestingModule.withRoutes([]), MatCardModule, HttpClientTestingModule, MatDialogModule]
     })
     .compileComponents();
   }));

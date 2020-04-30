@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -12,8 +13,16 @@ import { MatChipsModule } from '@angular/material/chips';
     MatCardModule,
     MatListModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogModule
   ],
-  exports: [MatCardModule, MatListModule, MatButtonModule, MatChipsModule],
+  exports: [
+    CommonModule,
+    MatCardModule,
+    MatListModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatDialogModule
+  ],
 })
 export class SharedModule {}

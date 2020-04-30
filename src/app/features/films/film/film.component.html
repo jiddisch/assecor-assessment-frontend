@@ -40,7 +40,7 @@
             *ngFor="let character of film.charactersCategoryNames"
             ><span class="pointer">{{ character.name }}</span></mat-chip
           >
-          <mat-chip>...</mat-chip>
+          <mat-chip (click)="openDialog('Character')">...</mat-chip>
         </mat-chip-list>
       </div>
 
@@ -56,7 +56,7 @@
               {{ planet.name }}
             </span></mat-chip
           >
-          <mat-chip>...</mat-chip>
+          <mat-chip (click)="openDialog('Planet')">...</mat-chip>
         </mat-chip-list>
       </div>
     </mat-card-footer>

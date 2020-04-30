@@ -13,6 +13,9 @@ import { CharactersService } from './characters/characters.service';
 import { FilmsService } from './films/films.service';
 import { PlanetsService } from './planets/planets.service';
 import { CategoryNamesService } from './category-names/category-names';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -23,19 +26,25 @@ import { CategoryNamesService } from './category-names/category-names';
     MatIconModule,
     MatListModule,
     RouterModule,
-    MatInputModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   exports: [
+    CommonModule,
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatInputModule,
+    RouterModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [CharactersService, FilmsService, PlanetsService, CategoryNamesService],
 })
