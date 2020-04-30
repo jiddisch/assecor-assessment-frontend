@@ -8,12 +8,7 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./characters.component.scss']
 })
 export class CharactersComponent implements OnInit {
-  characters$ = this.charactersService.characters$().pipe(
-    tap(res => {
-      console.log(res);
-
-    })
-  );
+  characters$ = this.charactersService.characters$();
 
   constructor(private charactersService: CharactersService) { }
 

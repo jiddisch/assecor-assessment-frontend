@@ -13,6 +13,7 @@ import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 })
 export class CharacterComponent implements OnInit {
   character$: Observable<Character>;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private charactersService: CharactersService,
